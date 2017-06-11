@@ -1,5 +1,5 @@
 # iot-p2p
-Peer data syncronization over COAP.
+Peer data synchronization over COAP.
 
 ## Create IoT P2P Server
  ```
