@@ -9,12 +9,14 @@ const PEER_TIMEOUT = 1000;
 
 describe('Simple P2P Test', function () {
     this.timeout(10 * 1000);
+    //Start servers
     before((done) => {
         let startTest = function (ok) {
             if (activeServers.length !== serverConfigs.length) {
                 return;
             }
             else {
+                console.log('Servers Started!');
                 ok();
             }
         }
@@ -26,6 +28,22 @@ describe('Simple P2P Test', function () {
                 activeServers.push(instance);
                 startTest(done);
             });
+        });
+    });
+    //Stop servers
+    after((done) => {
+        let cnt = 0;
+        let end = function () {
+            if (++cnt !== serverConfigs.length) {
+                return;
+            }
+            else {
+                console.log('Servers Stopped!');
+                done();
+            }
+        }
+        activeServers.forEach((server) => {
+            server.stop(end);
         });
     });
     it("Set data on 1st instance, ensure written to peers", (done) => {
