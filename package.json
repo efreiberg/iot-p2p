@@ -1,0 +1,32 @@
+{
+  "name": "iot-p2p",
+  "version": "0.0.1",
+  "description": "P2P for IoT",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --check-leaks --recursive ./test/unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efreiberg/iot-p2p.git"
+  },
+  "keywords": [
+    "IoT",
+    "P2P",
+    "COAP",
+    "Peer"
+  ],
+  "author": "Eric Freiberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/efreiberg/iot-p2p/issues"
+  },
+  "homepage": "https://github.com/efreiberg/iot-p2p#readme",
+  "dependencies": {
+    "coap": "^0.21.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.1",
+    "chai": "^3.5.0"
+  }
+}
